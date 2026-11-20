@@ -1,4 +1,4 @@
-name: Miyakawa cancel watch
+name: Sushi cancel watch
 
 # 실행 하나가 약 5시간 50분 동안 1분마다 확인합니다.
 # 15분마다 다음 실행을 예약해 두면, 앞 실행이 끝나는 즉시 대기 중이던 실행이 이어받습니다.
@@ -27,11 +27,13 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - name: Watch calendar (every 60s)
+      - name: Watch Miyakawa + Kai (every 60s)
         env:
           TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
           TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
-          TARGET_DATES: "2026-12-21,2026-12-22,2026-12-23"
+          MIYAKAWA_DATES: "2026-12-21,2026-12-22,2026-12-23"
+          KAI_DATES: "2026-12-21,2026-12-22"
+          KAI_PEOPLE: "2"
           INTERVAL_SECONDS: "60"
           LOOP_MINUTES: "345"
           GIT_COMMIT: "true"
